@@ -1,59 +1,74 @@
 package bai1;
 
-import java.io.Serializable;
+import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 
-public class Product implements Serializable {
-    private String productCode;
-    private String productName;
-    private String manufacturingDate;
-    private double price;
-    private String description;
+class Product implements Serializable {
+    private String maSanPham;
+    private String tenSanPham;
+    private String ngaySanXuat;
+    private double gia;
 
-    public Product(String productCode, String productName, String manufacturingDate, double price, String description) {
-        this.productCode = productCode;
-        this.productName = productName;
-        this.manufacturingDate = manufacturingDate;
-        this.price = price;
-        this.description = description;
+    public String getTenSanPham() {
+        return tenSanPham;
     }
 
-    public String getProductCode() {
-        return productCode;
+    public void setTenSanPham(String tenSanPham) {
+        this.tenSanPham = tenSanPham;
     }
 
-    public void setProductCode(String productCode) {
-        this.productCode = productCode;
+    public String getNgaySanXuat() {
+        return ngaySanXuat;
     }
 
-    public String getProductName() {
-        return productName;
+    public void setNgaySanXuat(String ngaySanXuat) {
+        this.ngaySanXuat = ngaySanXuat;
     }
 
-    public void setProductName(String productName) {
-        this.productName = productName;
+    public double getGia() {
+        return gia;
     }
 
-    public String getManufacturingDate() {
-        return manufacturingDate;
+    public void setGia(double gia) {
+        this.gia = gia;
     }
 
-    public void setManufacturingDate(String manufacturingDate) {
-        this.manufacturingDate = manufacturingDate;
+    public String getMoTa() {
+        return moTa;
     }
 
-    public double getPrice() {
-        return price;
+    public void setMoTa(String moTa) {
+        this.moTa = moTa;
     }
 
-    public void setPrice(double price) {
-        this.price = price;
+    private String moTa;
+
+    public String getMaSanPham() {
+        return maSanPham;
     }
 
-    public String getDescription() {
-        return description;
+    public void setMaSanPham(String maSanPham) {
+        this.maSanPham = maSanPham;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public Product(String maSanPham, String tenSanPham, String ngaySanXuat, double gia, String moTa) {
+        this.maSanPham = maSanPham;
+        this.tenSanPham = tenSanPham;
+        this.ngaySanXuat = ngaySanXuat;
+        this.gia = gia;
+        this.moTa = moTa;
+    }
+
+    // Các phương thức Getter và Setter ở đây
+
+    @Override
+    public String toString() {
+        return "Mã Sản Phẩm: " + maSanPham + "\n" +
+                "Tên Sản Phẩm: " + tenSanPham + "\n" +
+                "Ngày Sản Xuất: " + ngaySanXuat + "\n" +
+                "Giá: " + gia + "\n" +
+                "Mô Tả: " + moTa + "\n";
     }
 }
